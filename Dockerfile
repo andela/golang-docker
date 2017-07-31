@@ -11,7 +11,8 @@ RUN chmod +x /healthcheck-artifact
 COPY /supervisor/supervisord-healthcheck.ini /etc/supervisor.d/supervisord-healthcheck.ini
 
 # setup app
-ADD ./app/ /
+RUN mkdir -p /usr/src/app
+ADD ./app/ /usr/src/app/
 COPY /supervisor/supervisord-app.ini /etc/supervisor.d/supervisord-app.ini
 
 EXPOSE 8080
