@@ -2,6 +2,7 @@ FROM alpine:3.4
 
 ENV GRPC_HEALTH_CHECK_TAG %GRPC_HEALTH_CHECK_TAG%
 ENV PG_SCHEMA default
+ENV DEPLOYMENT_TAG %IMG_TAG%
 
 RUN apk add --update bash supervisor curl && rm -rf /var/cache/apk/*
 
